@@ -9,8 +9,8 @@ class Carteira {
 		$this->setSaldo($atributos['saldo']);
 	}
 
-	public function saque($valor) {
-		if (empty($valor)) {
+	public function saque($valor = '') {
+		if ($valor === '') {
 			return array(
 				'mensagem'  => 'Não foi informado o valor para o saque',
 				'resultado' => false
@@ -24,7 +24,7 @@ class Carteira {
 			);
 		}
 
-		if ($valor < 0) {
+		if ($valor <= 0) {
 			return array(
 				'mensagem'  => 'O valor informado para o saque deve ser maior do que zero',
 				'resultado' => false
@@ -46,8 +46,8 @@ class Carteira {
 		);
 	}
 
-	public function deposito($valor) {
-		if (empty($valor)) {
+	public function deposito($valor = '') {
+		if ($valor === '') {
 			return array(
 				'mensagem'  => 'Não foi informado o valor para o depósito',
 				'resultado' => false
