@@ -13,7 +13,7 @@ class Transacao extends REST_Controller {
     }
 
     public function index_post() {
-        $input = $this->input->post();
+        $input = $this->input->input_stream();
 
         $valor        = $input['value'];
         $pagador      = $input['payer'];
