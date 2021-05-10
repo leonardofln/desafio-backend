@@ -125,20 +125,20 @@ cd desafio-backend
 **Rodar o comando abaixo para construir/subir o container docker:**
 
 ```
-docker-compose up -d
+sudo docker-compose up -d
 ```
 
 **Copiar os arquivos ddl.sql e carga-inicial.sql para a máquina docker do banco de dados:**
 
 ```
-docker cp www/application/database/ddl.sql desafiobackend_db_1:/tmp/
-docker cp www/application/database/carga-inicial.sql desafiobackend_db_1:/tmp/
+sudo docker cp www/application/database/ddl.sql desafiobackend_db_1:/tmp/
+sudo docker cp www/application/database/carga-inicial.sql desafiobackend_db_1:/tmp/
 ```
 
 **Entrar na máquina docker do banco de dados para importar os arquivos:**
 
 ```
-docker exec -it desafiobackend_db_1 /bin/bash
+sudo docker exec -it desafiobackend_db_1 /bin/bash
 ```
 
 **Dentro da máquina docker do banco de dados, rodar os seguintes comandos:**
