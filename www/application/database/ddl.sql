@@ -1,7 +1,3 @@
-drop table extrato;
-drop table carteira;
-drop table usuario;
-
 create table usuario (
 	cd_usuario int NOT NULL AUTO_INCREMENT,
 	nm_usuario varchar(250) NOT NULL,

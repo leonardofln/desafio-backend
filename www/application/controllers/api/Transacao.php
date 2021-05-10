@@ -113,6 +113,7 @@ class Transacao extends REST_Controller {
         );
         $this->load->library('api/carteira', $atributos);
         $objCarteira = $this->carteira;
+        unset($this->carteira);
 
         // obj usuário
         $atributos = array(
@@ -126,8 +127,10 @@ class Transacao extends REST_Controller {
             'carteira'  => $objCarteira
         );
         $this->load->library('api/usuario', $atributos);
-        
-        return $this->usuario;
+        $objUsuario = $this->usuario;
+        unset($this->usuario);
+
+        return $objUsuario;
     }
 
     private function insereExtrato($tipo, $valor, $usuario) {

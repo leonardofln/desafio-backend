@@ -122,10 +122,30 @@ git clone git@github.com:leonardofln/desafio-backend.git
 cd desafio-backend
 ```
 
-**Rodar o comando abaixo para construir/subir o container docker**
+**Rodar o comando abaixo para construir/subir o container docker:**
 
 ```
 docker-compose up -d
+```
+
+**Copiar os arquivos ddl.sql e carga-inicial.sql para a máquina docker do banco de dados:**
+
+```
+docker cp www/application/database/ddl.sql desafiobackend_db_1:/tmp/
+docker cp www/application/database/carga-inicial.sql desafiobackend_db_1:/tmp/
+```
+
+**Entrar na máquina docker do banco de dados para importar os arquivos:**
+
+```
+docker exec -it desafiobackend_db_1 /bin/bash
+```
+
+**Dentro da máquina docker do bancod e dados, rodar os seguintes comandos:**
+
+```
+mysql -u root -p desafio < /tmp/ddl.sql
+mysql -u root -p desafio < /tmp/carga-inicial.sql
 ```
 
 ### Comandos para testar a API:
