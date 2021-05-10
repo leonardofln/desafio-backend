@@ -141,7 +141,7 @@ docker cp www/application/database/carga-inicial.sql desafiobackend_db_1:/tmp/
 docker exec -it desafiobackend_db_1 /bin/bash
 ```
 
-**Dentro da máquina docker do bancod e dados, rodar os seguintes comandos:**
+**Dentro da máquina docker do banco de dados, rodar os seguintes comandos:**
 
 ```
 mysql -u root -p desafio < /tmp/ddl.sql
