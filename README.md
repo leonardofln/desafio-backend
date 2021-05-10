@@ -54,6 +54,30 @@ links:
    - db
 ```
 
+O arquivo `docker-compose.yml` final ficou desta forma:
+
+```
+php:
+  build: .
+  ports:
+   - "80:80"
+   - "443:443"
+  volumes:
+   - ./www:/var/www/html
+  links:
+   - db
+db:
+  image: mysql:5.7
+  ports:
+   - "3306:3306"
+  volumes:
+   - /var/lib/mysql-desafio:/var/lib/mysql
+  environment:
+   - MYSQL_ROOT_PASSWORD=root
+   - MYSQL_DATABASE=desafio
+
+```
+
 As instruções de como montar a máquina docker, foram obtidas no seguinte endereço: https://medium.com/@FernandoDebrand/criando-um-ambiente-de-desenvolvimento-php-com-docker-compose-a7cad3373df0
 
 **Framework PHP**
