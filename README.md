@@ -185,17 +185,31 @@ vendor/bin/phpunit -c application/tests --filter Carteira_test --group deposito
 
 ## Ferramenta para avaliação estática do código
 
+**Entrar na pasta da aplicacao (www) dentro do projeto:**
+
+```
+cd www
+```
+
+**Rodar o comando abaixo para executar a avaliação no diretório application/controllers/api**
+
 ```
 sudo docker run -it --rm -v $(pwd):/project -w /project jakzal/phpqa phpmd application/controllers/api text cleancode,codesize,controversial,design,naming,unusedcode
 ```
+
+**Rodar o comando abaixo para executar a avaliação no diretório application/libraries/api**
 
 ```
 sudo docker run -it --rm -v $(pwd):/project -w /project jakzal/phpqa phpmd application/libraries/api text cleancode,codesize,controversial,design,naming,unusedcode
 ```
 
+**Rodar o comando abaixo para executar a avaliação no diretório application/models**
+
 ```
 sudo docker run -it --rm -v $(pwd):/project -w /project jakzal/phpqa phpmd application/models text cleancode,codesize,controversial,design,naming,unusedcode
 ```
+
+**Rodar o comando abaixo para executar a avaliação no diretório application/tests/libraries**
 
 ```
 sudo docker run -it --rm -v $(pwd):/project -w /project jakzal/phpqa phpmd application/tests/libraries text cleancode,codesize,controversial,design,naming,unusedcode
