@@ -182,3 +182,21 @@ vendor/bin/phpunit -c application/tests --filter Carteira_test
 vendor/bin/phpunit -c application/tests --filter Carteira_test --group saque
 vendor/bin/phpunit -c application/tests --filter Carteira_test --group deposito
 ```
+
+## Ferramenta para avaliação estática do código
+
+```
+sudo docker run -it --rm -v $(pwd):/project -w /project jakzal/phpqa phpmd application/controllers/api text cleancode,codesize,controversial,design,naming,unusedcode
+```
+
+```
+sudo docker run -it --rm -v $(pwd):/project -w /project jakzal/phpqa phpmd application/libraries/api text cleancode,codesize,controversial,design,naming,unusedcode
+```
+
+```
+sudo docker run -it --rm -v $(pwd):/project -w /project jakzal/phpqa phpmd application/models text cleancode,codesize,controversial,design,naming,unusedcode
+```
+
+```
+sudo docker run -it --rm -v $(pwd):/project -w /project jakzal/phpqa phpmd application/tests/libraries text cleancode,codesize,controversial,design,naming,unusedcode
+```
