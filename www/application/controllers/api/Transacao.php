@@ -169,6 +169,7 @@ class Transacao extends REST_Controller {
         return $notificacao->executa($valor, $usuario);
     }
 
+    // verificar possibilidade de utilizar o design pattern: Chain of Responsibility
     private function transferencia($valor, $pagador, $beneficiario) {
         $this->db->trans_begin();
         $saque = $pagador->getCarteira()->saque($valor);
